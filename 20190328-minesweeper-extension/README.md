@@ -12,7 +12,7 @@ that counts the number of mines adjacent to a square
 and transforms boards like this (where * indicates a mine):
 
 _Note:_ The one-dimensional mines are extended to two-dimensional array. 
-It's continuation from the previous session (see: [o2-dojo/20190313-minesweeper](../20190328-minesweeper-extension)).
+It's continuation from the previous session (see: [o2-dojo/20190313-minesweeper](../20190328-minesweeper)).
 
 ### Example
 This input mine game...
