@@ -1,21 +1,28 @@
-# Sieve
+# Kata: Sieve
 
-Write a program that uses the Sieve of Eratosthenes to find all the primes from 2 up to a given number.
+## Introduction
+Use the Sieve of Eratosthenes to find all the primes from 2 up to a given number.
 
-The Sieve of Eratosthenes is a simple, ancient algorithm for finding all prime numbers up to any given limit.
+The Sieve of Eratosthenes is a simple, ancient algorithm for finding all prime numbers up to any given limit. It does so by iteratively marking as composite (i.e. not prime) the multiples of each prime, starting with the multiples of 2. It does not use any division or remainder operation.
 
-Create your range, starting at two and ending at the given limit.
+Create your range, starting at two and continuing up to and including the given limit. (i.e. [2, limit])
 
 The algorithm consists of repeating the following over and over:
+* take the next available unmarked number in your list (it is prime)
+* mark all the multiples of that number (they are not prime)
 
-- take the next available unmarked number in your list (it is prime)
-- remove all the multiples of that number (they are not prime)
+Repeat until you have processed each number in your range.
 
-Repeat until you don't have any possible primes left in your range.
+When the algorithm terminates, all the numbers in the list that have not been marked are prime.
 
-When the algorithm terminates, all the numbers in the list that have not been removed are prime.
+The wikipedia article has a useful graphic that explains the algorithm: [Wiki: Sieve of Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+
+Notice that this is a very specific algorithm, and the tests don't check that you've implemented the algorithm, only that you've come up with the correct list of primes. A good first test is to check that you do not use division or remainder operations (div, /, mod or % depending on the language).
 
 
-## Source
-
-Sieve of Eratosthenes at Wikipedia [view source](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+## About session
+* Date: 17. 4. 2019
+* Language: Kotlin
+* IDE: Intellij IDEA 2018.3
+* Participants: Jan Jaroš, Tomáš Bartošek, David Bárta, Lukáš Pírko
+* Source: [exercism.io/Sieve](https://exercism.io/my/solutions/62811c9d05074f9a9ac2e590e3ccc8e1)
