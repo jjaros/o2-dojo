@@ -1,27 +1,23 @@
+
 internal class SieveOfEratosthenes {
+
     fun findPrimeNumbers(maxRange: Int): List<Int> {
         val primeNumbers = mutableListOf<Int>()
         // generate range
-        val baseData = mutableListOf<SieveOfEratosthenesNumber>()
-        for (i in 2..maxRange) {
-            baseData.add(
-                SieveOfEratosthenesNumber(i)
-            )
-        }
-        // find print numbers
-        baseData.forEachIndexed { index, sieveOfEratosthenesNumber ->
-            if (!sieveOfEratosthenesNumber.isNotPrimeNumber) {
-                primeNumbers.add(sieveOfEratosthenesNumber.value)
-                // mark NOT prime numbers
-                for (i in index..(baseData.size - 1)) {
-                    if (baseData[i].value % sieveOfEratosthenesNumber.value == 0) {
-                        baseData[i].isNotPrimeNumber = true
-                    }
-                }
+        val baseData = (2..maxRange).map { it -> SieveOfEratosthenesNumber(it) }
+
+        // find prime numbers
+        baseData.forEachIndexed { actualIndex, soeNumber ->
+            if (soeNumber.isNotPrimeNumber) {
+                primeNumbers.add(soeNumber.value)
+                // mark non-prime numbers
+                (actualIndex until baseData.size)
+                    .filter { i -> baseData[i].value % soeNumber.value == 0 }
+                    .forEach { i -> baseData[i].isNotPrimeNumber = false }
             }
         }
         return primeNumbers
     }
 
-    private data class SieveOfEratosthenesNumber(val value: Int, var isNotPrimeNumber: Boolean = false)
+    private data class SieveOfEratosthenesNumber(val value: Int, var isNotPrimeNumber: Boolean = true)
 }

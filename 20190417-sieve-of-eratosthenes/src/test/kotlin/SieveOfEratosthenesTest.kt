@@ -28,7 +28,16 @@ internal class SieveOfEratosthenesTest {
                 Arguments.of(8, listOf(2, 3, 5, 7)),
                 Arguments.of(9, listOf(2, 3, 5, 7)),
                 Arguments.of(10, listOf(2, 3, 5, 7)),
-                Arguments.of(11, listOf(2, 3, 5, 7, 11))
+                Arguments.of(11, listOf(2, 3, 5, 7, 11)),
+                Arguments.of(12, listOf(2, 3, 5, 7, 11)),
+                Arguments.of(13, listOf(2, 3, 5, 7, 11, 13)),
+                Arguments.of(14, listOf(2, 3, 5, 7, 11, 13)),
+                Arguments.of(15, listOf(2, 3, 5, 7, 11, 13)),
+                Arguments.of(16, listOf(2, 3, 5, 7, 11, 13)),
+                Arguments.of(17, listOf(2, 3, 5, 7, 11, 13, 17)),
+                Arguments.of(18, listOf(2, 3, 5, 7, 11, 13, 17)),
+                Arguments.of(19, listOf(2, 3, 5, 7, 11, 13, 17, 19)),
+                Arguments.of(20, listOf(2, 3, 5, 7, 11, 13, 17, 19))
             )
         }
     }
